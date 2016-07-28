@@ -1,0 +1,8 @@
+node_modules
+*.js
+*.js.map
+typings
+.vagrant
+
+.DS_store
+.keep
