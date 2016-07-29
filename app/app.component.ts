@@ -1,9 +1,10 @@
 import { Component }         from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { TrickService }       from './trick/trick.service';
-import { PrefixService }     from './prefix/prefix.service';
-import { PostfixService }    from './postfix/postfix.service';
+import { TrickService }    from './trick/trick.service';
+import { PrefixService }   from './prefix/prefix.service';
+import { PostfixService }  from './postfix/postfix.service';
+import { ObstacleService } from './obstacle/obstacle.service';
 
 @Component({
   selector: 'my-app',
@@ -14,6 +15,7 @@ import { PostfixService }    from './postfix/postfix.service';
       <a [routerLink]="['/tricks']" routerLinkActive="active">tricks</a>
       <a [routerLink]="['/prefixes']" routerLinkActive="active">Prefixes</a>
       <a [routerLink]="['/postfixes']" routerLinkActive="active">Posfixes</a>
+      <a [routerLink]="['/obstacles']" routerLinkActive="active">Obstacles</a>
       <router-outlet></router-outlet>
     </nav>
   `,
@@ -23,8 +25,9 @@ import { PostfixService }    from './postfix/postfix.service';
     TrickService,
     PrefixService,
     PostfixService,
+    ObstacleService,
   ]
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Homespot a Skateboard SRS';
 }

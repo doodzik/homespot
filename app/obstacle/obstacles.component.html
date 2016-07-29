@@ -1,0 +1,10 @@
+<h2>My Obstacles</h2>
+<button (click)="new()">add Obstacle</button>
+<ul class="heroes">
+  <li *ngFor="let obstacle of obstacles"
+    (click)="show(obstacle)">
+    <span class="hero-element">
+      {{obstacle.name}}
+    </span>
+  </li>
+</ul>

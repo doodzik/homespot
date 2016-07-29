@@ -7,7 +7,7 @@ import { PostfixService } from './postfix.service';
 @Component({
   selector:    'postfix-new',
   templateUrl: 'app/postfix/postfix-new.component.html',
-  styleUrls:   ['app/trick-detail.component.css'],
+  styleUrls:   ['app/trick/trick-detail.component.css'],
 })
 export class PostfixNewComponent implements OnInit {
 

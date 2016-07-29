@@ -7,7 +7,7 @@ import { PostfixService } from './postfix.service';
 @Component({
   selector:    'postfix-detail',
   templateUrl: './app/postfix/postfix-detail.component.html',
-  styleUrls:   ['app/trick-detail.component.css'],
+  styleUrls:   ['app/trick/trick-detail.component.css'],
 })
 export class PostfixDetailComponent implements OnInit, OnDestroy {
   @Input() postfix: Postfix;

@@ -7,7 +7,7 @@ import { PrefixService } from './prefix.service';
 @Component({
   selector:    'prefix-new',
   templateUrl: 'app/prefix/prefix-new.component.html',
-  styleUrls:   ['app/trick-detail.component.css'],
+  styleUrls:   ['app/trick/trick-detail.component.css'],
 })
 export class PrefixNewComponent implements OnInit {
 

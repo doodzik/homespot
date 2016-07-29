@@ -1,0 +1,8 @@
+<div *ngIf="obstacle">
+  <h2>{{obstacle.name}} details!</h2>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="obstacle.name" placeholder="name"/>
+  </div>
+  <button (click)="save()">Save</button>
+</div>

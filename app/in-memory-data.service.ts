@@ -27,6 +27,13 @@ export class InMemoryDataService {
       {id: 4, name: 'bs'},
     ]
 
-    return {tricks, prefixes, postfixes};
+    let obstacles = [
+      {id: 1, name: 'fs 180'},
+      {id: 2, name: 'fs'},
+      {id: 3, name: 'bs 180'},
+      {id: 4, name: 'bs'},
+    ]
+
+    return {tricks, prefixes, postfixes, obstacles};
   }
 }
