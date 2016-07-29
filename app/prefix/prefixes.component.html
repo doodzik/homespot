@@ -1,0 +1,10 @@
+<h2>My Prefixes</h2>
+<button (click)="new()">add Prefix</button>
+<ul class="heroes">
+  <li *ngFor="let prefix of prefixes"
+    (click)="show(prefix)">
+    <span class="hero-element">
+      {{prefix.name}}
+    </span>
+  </li>
+</ul>

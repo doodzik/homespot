@@ -12,6 +12,14 @@ export class InMemoryDataService {
       {id: 19, name: 'Magma'},
       {id: 20, name: 'Tornado'}
     ];
-    return {heroes};
+
+    let prefixes = [
+      {id: 1, name: 'fs 180'},
+      {id: 2, name: 'fs'},
+      {id: 3, name: 'bs 180'},
+      {id: 4, name: 'bs'},
+    ]
+
+    return {heroes, prefixes};
   }
 }
