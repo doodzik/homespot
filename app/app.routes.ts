@@ -4,6 +4,7 @@ import { DashboardComponent }          from './dashboard.companent';
 import { HeroDetailComponent }         from './trick-detail.component';
 
 import { PrefixRoutes }                from './prefix/prefix.routes';
+import { PostfixRoutes }               from './postfix/postfix.routes';
 
 const routes: RouterConfig = [
   {
@@ -20,7 +21,7 @@ const routes: RouterConfig = [
   },
 ]
 
-const allRoutes: RouterConfig = routes.concat(PrefixRoutes)
+const allRoutes: RouterConfig = routes.concat(PrefixRoutes).concat(PostfixRoutes)
 
 export const appRouterProviders = [
   provideRouter(allRoutes)

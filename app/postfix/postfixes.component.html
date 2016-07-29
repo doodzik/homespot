@@ -1,0 +1,10 @@
+<h2>My Postfixes</h2>
+<button (click)="new()">add Postfix</button>
+<ul class="heroes">
+  <li *ngFor="let postfix of postfixes"
+    (click)="show(postfix)">
+    <span class="hero-element">
+      {{postfix.name}}
+    </span>
+  </li>
+</ul>

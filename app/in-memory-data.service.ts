@@ -19,7 +19,14 @@ export class InMemoryDataService {
       {id: 3, name: 'bs 180'},
       {id: 4, name: 'bs'},
     ]
+    
+    let postfixes = [
+      {id: 1, name: 'fs 180'},
+      {id: 2, name: 'fs'},
+      {id: 3, name: 'bs 180'},
+      {id: 4, name: 'bs'},
+    ]
 
-    return {heroes, prefixes};
+    return {heroes, prefixes, postfixes};
   }
 }
