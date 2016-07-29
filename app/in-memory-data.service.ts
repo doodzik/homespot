@@ -1,6 +1,6 @@
 export class InMemoryDataService {
   createDb() {
-    let heroes = [
+    let tricks = [
       {id: 11, name: 'Mr. Nice'},
       {id: 12, name: 'Narco'},
       {id: 13, name: 'Bombasto'},
@@ -27,6 +27,6 @@ export class InMemoryDataService {
       {id: 4, name: 'bs'},
     ]
 
-    return {heroes, prefixes, postfixes};
+    return {tricks, prefixes, postfixes};
   }
 }

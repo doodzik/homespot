@@ -1,7 +1,7 @@
 import { Component }         from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { HeroService }       from './trick.service';
+import { TrickService }       from './trick/trick.service';
 import { PrefixService }     from './prefix/prefix.service';
 import { PostfixService }    from './postfix/postfix.service';
 
@@ -11,7 +11,7 @@ import { PostfixService }    from './postfix/postfix.service';
     <h1>{{title}}</h1>
     <nav>
       <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
-      <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
+      <a [routerLink]="['/tricks']" routerLinkActive="active">tricks</a>
       <a [routerLink]="['/prefixes']" routerLinkActive="active">Prefixes</a>
       <a [routerLink]="['/postfixes']" routerLinkActive="active">Posfixes</a>
       <router-outlet></router-outlet>
@@ -20,7 +20,7 @@ import { PostfixService }    from './postfix/postfix.service';
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
-    HeroService,
+    TrickService,
     PrefixService,
     PostfixService,
   ]

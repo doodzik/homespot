@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './trick';
+import { Trick } from './trick';
 
 @Injectable()
-export class HeroService {
-  private heroesUrl = 'app/heroes';  // URL to web api
+export class TrickService {
+  private url = 'app/tricks';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getHeroes() {
-    return this.http.get(this.heroesUrl)
+  getTricks() {
+    return this.http.get(this.url)
                .toPromise()
-               .then(response => response.json().data as Hero[])
+               .then(response => response.json().data as Trick[])
                .catch(this.handleError);
   }
 
@@ -22,42 +22,42 @@ export class HeroService {
     return Promise.reject(error.message || error);
   }
 
-  getHero(id: number) {
-    return this.getHeroes()
-               .then(heroes => heroes.find(hero => hero.id === id));
+  getTrick(id: number) {
+    return this.getTricks()
+               .then(tricks => tricks.find(trick => trick.id === id));
   }
   
-  // Add new Hero
-  private post(hero: Hero): Promise<Hero> {
+  // Add new Trick
+  private post(trick: Trick): Promise<Trick> {
     let headers = new Headers({
       'Content-Type': 'application/json'});
 
     return this.http
-               .post(this.heroesUrl, JSON.stringify(hero), {headers: headers})
+               .post(this.url, JSON.stringify(trick), {headers: headers})
                .toPromise()
                .then(res => res.json().data)
                .catch(this.handleError);
   }
 
-  // Update existing Hero
-  private put(hero: Hero) {
+  // Update existing Trick
+  private put(trick: Trick) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.heroesUrl}/${hero.id}`;
+    let url = `${this.url}/${trick.id}`;
 
     return this.http
-               .put(url, JSON.stringify(hero), {headers: headers})
+               .put(url, JSON.stringify(trick), {headers: headers})
                .toPromise()
-               .then(() => hero)
+               .then(() => trick)
                .catch(this.handleError);
   }
 
-  delete(hero: Hero) {
+  delete(trick: Trick) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.heroesUrl}/${hero.id}`;
+    let url = `${this.url}/${trick.id}`;
 
     return this.http
                .delete(url, {headers: headers})
@@ -65,10 +65,10 @@ export class HeroService {
                .catch(this.handleError);
   }
 
-  save(hero: Hero): Promise<Hero>  {
-    if (hero.id) {
-      return this.put(hero);
+  save(trick: Trick): Promise<Trick>  {
+    if (trick.id) {
+      return this.put(trick);
     }
-    return this.post(hero);
+    return this.post(trick);
   }
 }
