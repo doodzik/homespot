@@ -41,7 +41,7 @@ export class TrickDetailComponent implements OnInit, OnDestroy {
 
   goBack(savedTrick: Trick = null) {
     this.close.emit(savedTrick);
-    if (this.navigated) { window.history.back(); }
+    window.history.back()
   }
 
   save() {
@@ -53,4 +53,16 @@ export class TrickDetailComponent implements OnInit, OnDestroy {
         })
         .catch(error => this.error = error); // TODO: Display error message
   }
+
+  delete(event: any) {
+    event.stopPropagation();
+    this.trickService
+        .delete(this.trick)
+        .then(res => {
+          this.trick = null; // saved trick, w/ id if new
+          this.goBack();
+        })
+        .catch(error => this.error = error);
+  }
+
 }

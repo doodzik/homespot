@@ -1,16 +1,16 @@
 export class InMemoryDataService {
   createDb() {
     let tricks = [
-      {id: 11, name: 'Mr. Nice'},
-      {id: 12, name: 'Narco'},
-      {id: 13, name: 'Bombasto'},
-      {id: 14, name: 'Celeritas'},
-      {id: 15, name: 'Magneta'},
-      {id: 16, name: 'RubberMan'},
-      {id: 17, name: 'Dynama'},
-      {id: 18, name: 'Dr IQ'},
-      {id: 19, name: 'Magma'},
-      {id: 20, name: 'Tornado'}
+      {id: 11, name: 'Mr. Nice', created: Date.now()},
+      {id: 12, name: 'Narco', created: Date.now()},
+      {id: 13, name: 'Bombasto', created: Date.now()},
+      {id: 14, name: 'Celeritas', created: Date.now()},
+      {id: 15, name: 'Magneta', created: Date.now()},
+      {id: 16, name: 'RubberMan', created: Date.now()},
+      {id: 17, name: 'Dynama', created: Date.now()},
+      {id: 18, name: 'Dr IQ', created: Date.now()},
+      {id: 19, name: 'Magma', created: Date.now()},
+      {id: 20, name: 'Tornado', created: Date.now()}
     ];
 
     let prefixes = [

@@ -1,24 +1,11 @@
 <h2>My Tricks</h2>
+<button (click)="addTrick()">Add New Trick</button>
 <ul class="tricks">
   <li *ngFor="let trick of tricks"
-    [class.selected]="trick === selectedTrick"
-    (click)="onSelect(trick)">
+    (click)="show(trick)">
     <span class="trick-element">
-      <span class="badge">{{trick.id}}</span> {{trick.name}}
+      {{trick.name}}
     </span>
-    <button class="delete-button" (click)="deleteTrick(trick, $event)">Delete</button>
   </li>
 </ul>
 
-<div class="error" *ngIf="error">{{error}}</div>
-<button (click)="addTrick()">Add New Trick</button>
-<div *ngIf="addingTrick">
-  <my-trick-detail (close)="close($event)"></my-trick-detail>
-</div>
-
-<div *ngIf="selectedTrick">
-  <h2>
-    {{selectedTrick.name | uppercase}} is my trick
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
