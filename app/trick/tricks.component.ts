@@ -11,7 +11,7 @@ import { TrickService }         from './trick.service';
 })
 export class TricksComponent implements OnInit {
 
-  tricks: Trick[];
+  tricks: any;
   error: any;
 
   constructor(
@@ -21,7 +21,7 @@ export class TricksComponent implements OnInit {
 
   getTricks() {
     this.trickService
-        .getTricks()
+        .getTrickNames()
         .then(tricks => this.tricks = tricks)
         .catch(error => this.error = error);
   }
@@ -30,8 +30,8 @@ export class TricksComponent implements OnInit {
     this.getTricks();
   }
 
-  show(trick: Trick) { 
-    let link = ['/trick', trick.id];
+  show(trick: String) { 
+    let link = ['/trick', trick];
     this.router.navigate(link);
   }
 }

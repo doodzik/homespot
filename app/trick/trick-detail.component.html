@@ -1,10 +1,36 @@
 <div class="error" *ngIf="error">{{error}}</div>
 <div *ngIf="trick">
   <h2>{{trick.name}} details!</h2>
-  <div><label>id: </label>{{trick.id}}</div>
   <div>
+    <label>stance</label>
+    <label>normal</label>
+    <input type="checkbox" name="stance" [(ngModel)]="trick.stance.normal">
+    <label>nollie</label>
+    <input type="checkbox" name="stance" [(ngModel)]="trick.stance.nollie">
+    <label>switch</label>
+    <input type="checkbox" name="stance" [(ngModel)]="trick.stance.switch">
+    <label>fakie</label>
+    <input type="checkbox" name="stance" [(ngModel)]="trick.stance.fakie">
+    <br/>
+
+    <label>prefixes: </label>
+    <span *ngFor="let prefix of prefixes"
+      (click)="show(prefix)">
+      <label>{{prefix.name}}</label>
+      <input type="checkbox" name="prefixes" [(ngModel)]="prefix.selected">
+    </span>
+    <br/>
+
     <label>name: </label>
     <input [(ngModel)]="trick.name" placeholder="name"/>
+    <br/>
+
+    <label>postfixes: </label>
+    <span *ngFor="let postfix of postfixes">
+      <label>{{postfix.name}}</label>
+      <input type="checkbox" name="postfixes" [(ngModel)]="postfix.selected">
+    </span>
+    <br/>
   </div>
   <button class="delete-button" (click)="delete($event)">Delete</button>
   <button (click)="save()">Save</button>

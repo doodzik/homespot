@@ -26,7 +26,7 @@ export class PrefixesComponent implements OnInit {
   getPrefixes() {
     this.prefixService
         .getPrefixes()
-        .then(heroes => this.prefixes = heroes)
+        .then(prefixes => this.prefixes = prefixes)
         .catch(error => this.error = error);
   }
 

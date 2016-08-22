@@ -1,8 +1,8 @@
 node_modules
 *.js
+# !system.config.js
 *.js.map
 typings
-./.vagrant
  
 npm-debug.log
 

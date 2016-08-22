@@ -1,16 +1,19 @@
+export enum STANCE {
+  normal,
+  switch,
+  fakie,
+  nolli
+}
+
 export class InMemoryDataService {
   createDb() {
     let tricks = [
-      {id: 11, name: 'Mr. Nice', created: Date.now()},
-      {id: 12, name: 'Narco', created: Date.now()},
-      {id: 13, name: 'Bombasto', created: Date.now()},
-      {id: 14, name: 'Celeritas', created: Date.now()},
-      {id: 15, name: 'Magneta', created: Date.now()},
-      {id: 16, name: 'RubberMan', created: Date.now()},
-      {id: 17, name: 'Dynama', created: Date.now()},
-      {id: 18, name: 'Dr IQ', created: Date.now()},
-      {id: 19, name: 'Magma', created: Date.now()},
-      {id: 20, name: 'Tornado', created: Date.now()}
+      {id: 11, name: 'olli', created: Date.now(), stance: STANCE.normal, prefix_id: 1, postfix_id: 1},
+      {id: 11, name: 'olli', created: Date.now(), stance: STANCE.normal, prefix_id: 1, postfix_id: 2},
+      {id: 11, name: 'olli', created: Date.now(), stance: STANCE.switch, prefix_id: 1, postfix_id: 1},
+      {id: 11, name: 'olli', created: Date.now(), stance: STANCE.switch, prefix_id: 1, postfix_id: 2},
+      {id: 11, name: '5050', created: Date.now(), stance: STANCE.normal, prefix_id: 1, postfix_id: 2},
+      {id: 11, name: '5050', created: Date.now(), stance: STANCE.switch, prefix_id: 1, postfix_id: 2}
     ];
 
     let prefixes = [
